@@ -2,6 +2,8 @@ from django.conf.urls import url
 from snippets import views
 
 urlpatterns = [
-    url(r'^snippets/$', views.SnippetList.as_view()),
-    url(r'^snippets/(?P<pk>[0-9]+)/$', views.SnippetDetail.as_view())
+    url('snippets', views.SnippetList.as_view()),
+    url('snippets/<int:pk>', views.SnippetDetail.as_view()),
+    url('users', views.UserList.as_view()),
+    url('users/<int:pk>', views.UserDetail.as_view()),
 ]
